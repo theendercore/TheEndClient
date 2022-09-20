@@ -18,7 +18,8 @@ os.system('cp ./perm/servers.dat ' + tmp_path)
 # Copy the mods folder and deletes pre-selected and .disabled files
 tmp_path += "/mods"
 os.system('cp -R ' + input_path + 'mods ' + tmp_path)
-os.system('rm -R ' + tmp_path + '/.index ' + tmp_path + '/libJNativeHook.x86_64.so')
+os.system('rm -R ' + tmp_path + '/.index ' +
+          tmp_path + '/libJNativeHook.x86_64.so')
 for root, dirs, files in os.walk(tmp_path):
     for filename in files:
         if filename.endswith(".disabled"):
@@ -26,7 +27,13 @@ for root, dirs, files in os.walk(tmp_path):
             os.system('rm ' + tmp_path + '/' + filename)
 tmp_path = "./tmp"
 
+# Copy the configs folder and delte not need ones
+tmp_path += "/resourcepacks"
+os.system('cp -R ' + input_path + 'resourcepacks ' + tmp_path)
+# os.system('rm -R -- '+tmp_path+"/")
+
+tmp_path = "./tmp"
 
 # Delete the tmp
-x = input("Delte the tmp")
+x = input("Delte the tmp ?\n")
 os.system('rm -r ' + tmp_path)
