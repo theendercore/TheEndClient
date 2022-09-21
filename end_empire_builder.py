@@ -88,7 +88,7 @@ for root, dirs, files in os.walk(output_path):
 for root, dirs, files in os.walk("./tmp"):
     for dir in dirs:
         os.system('mv ./tmp/'+dir+" "+output_path)
-    for file in files:  
+for file in files:  
         os.system('mv ./tmp/'+file+" "+output_path)
 
 # Delete the tmp
