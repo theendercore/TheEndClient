@@ -6,23 +6,25 @@ def log(s):
 
 
 input_path = "/media/Data/Game_L/PolyMC/instances/TheEndClient/.minecraft"
-output_path = "/home/ender/.local/share/atlauncher/instances/TheEnd"
+output_path = "/home/ender/.local/share/atlauncher/instances/TheEndClient"
 resourcepacks = ["§cTea", "baguette", "Ender's-Tweaks", "Original Green"]
-removed_config_d = [
-    ".puzzle_cache",
-    "fabric",
-    "litematica",
-    "minihud",
-    "quilt",
-    "syncmatica",
-    "worldedit",
-]
-removed_config_f = [
-    "cmdkeybindconfig",
-    "fzmm",
-    "hydra",
-    "visible_toggle_sprint",
-]
+removed_config = {
+    "dir":
+    [
+        ".puzzle_cache",
+        "fabric",
+        "litematica",
+        "minihud",
+        "quilt",
+        "syncmatica",
+        "worldedit",
+    ],
+    "file": [
+        "cmdkeybindconfig",
+        "fzmm",
+        "hydra",
+        "visible_toggle_sprint",
+    ]}
 tmp_path = "./tmp"
 
 # Create tmp folder
@@ -60,16 +62,34 @@ tmp_path += "/config"
 os.system('cp -R ' + input_path + '/config ' + tmp_path)
 for root, dirs, files in os.walk(input_path+"/config"):
     for dir in dirs:
-        for conf in removed_config_d:
+        for conf in removed_config.get("dir"):
             if dir.startswith(conf):
                 os.system('rm -R ' + tmp_path + '/'+dir)
-                log("deleted : " + dir)
     for file in files:
-        for conf in removed_config_f:
+        for conf in removed_config.get("file"):
             if file.startswith(conf):
                 os.system('rm -R ' + tmp_path + '/'+file)
-                log("deleted : " + file)
 tmp_path = "./tmp"
+
+
+# Copy the options.txt
+os.system('cp ./perm/options.txt ' + tmp_path)
+
+# Delete The old Modpack
+for root, dirs, files in os.walk(output_path):
+    for dir in dirs:
+        os.system('rm -R ' + output_path+"/"+dir)
+    for file in files:
+        if not file.startswith("instance."):
+            os.system("rm -f "+file)
+
+
+# Move The files to the "output_path"
+for root, dirs, files in os.walk("./tmp"):
+    for dir in dirs:
+        os.system('mv ./tmp/'+dir+" "+output_path)
+    for file in files:  
+        os.system('mv ./tmp/'+file+" "+output_path)
 
 # Delete the tmp
 x = input("Delte the tmp ?\n")

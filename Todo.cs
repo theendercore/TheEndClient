@@ -1,4 +1,4 @@
-- copy and modify options.txt
+// - copy and modify options.txt (kidna)
 // - copy over sever.dat
 // - copy config [delete hydra ones]
 // - delete and then copy over the mods [make sure to delete disabled ones and the extra files]
