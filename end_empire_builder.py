@@ -36,8 +36,12 @@ os.system('cp ./perm/servers.dat ' + tmp_path)
 # Copy the mods folder and deletes pre-selected and .disabled files
 tmp_path += "/mods"
 os.system('cp -R ' + input_path + '/mods ' + tmp_path)
-os.system('rm -R ' + tmp_path + '/.index ' +
-          tmp_path + '/libJNativeHook.x86_64.so')
+os.system(
+    f'rm -R {tmp_path }/.index ' +
+    f'{tmp_path}/libJNativeHook.x86_64.so '+
+    f'\"{tmp_path}/Essential Dependencies.jar\"')
+
+
 for root, dirs, files in os.walk(tmp_path):
     for filename in files:
         if filename.endswith(".disabled"):
