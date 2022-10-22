@@ -81,15 +81,14 @@ for root, dirs, files in os.walk(output_path):
         os.system('rm -R ' + output_path+"/"+dir)
     for file in files:
         if not file.startswith("instance."):
-            os.system("rm -f "+file)
-
+            os.system("rm -f "+output_path+"/"+file)
 
 # Move The files to the "output_path"
 for root, dirs, files in os.walk("./tmp"):
     for dir in dirs:
         os.system('mv ./tmp/'+dir+" "+output_path)
-for file in files:  
-        os.system('mv ./tmp/'+file+" "+output_path)
+for file in files:
+    os.system('mv ./tmp/'+file+" "+output_path)
 
 # Delete the tmp
 x = input("Delte the tmp ?\n")

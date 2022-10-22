@@ -22,8 +22,9 @@ I also would recomend [Astral Lex](https://www.curseforge.com/minecraft/customiz
 </details>
 
 Resource Packs:
-- Tea - https://www.curseforge.com/minecraft/texture-packs/tea-jolly-good
-- Ender's Tweaks - https://www.curseforge.com/minecraft/texture-packs/enders-tweaks
+- Tea - https://modrinth.com/resourcepack/tea
+- Ender's Tweaks - https://modrinth.com/resourcepack/enders-tweaks
+- Green Debris - https://modrinth.com/resourcepack/colored-ancient-debris
 - baguette-1.18 -  https://www.curseforge.com/minecraft/texture-packs/baguette
 
 Reviews:<br>
