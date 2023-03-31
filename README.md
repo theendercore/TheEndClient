@@ -1,7 +1,7 @@
 ## The End Client
 A modpack made by me for me (mostly).<br>
 This is a simple client side quilt modpack for better performance and client side tweaks / qol improvements.<br>
-I also would recomend [Astral Lex](https://www.curseforge.com/minecraft/customization/astralex-shader-bsl-edit) Shader as Its very cool.
+I also would recommend [Astral Lex](https://www.curseforge.com/minecraft/customization/astralex-shader-bsl-edit) Shader as Its very cool.
 <details>
   <summary>There are some mods in this pack that are not found on modrith (As of 1.2.1). These mods can be found on :</summary>
     <ul>

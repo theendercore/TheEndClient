@@ -1,9 +1,7 @@
 import os
 
-
 def log(s):
     print(s)
-
 
 input_path = "/media/Data/Game_L/PolyMC/instances/TheEndClient/.minecraft"
 output_path = "/home/ender/.local/share/atlauncher/instances/TheEndClient"
@@ -61,7 +59,7 @@ for root, dirs, files in os.walk(input_path+"/resourcepacks"):
                 log(file+" | " + rec)
 tmp_path = "./tmp"
 
-# Copy the configs folder and delte not need ones
+# Copy the configs folder and delete not need ones
 tmp_path += "/config"
 os.system('cp -R ' + input_path + '/config ' + tmp_path)
 for root, dirs, files in os.walk(input_path+"/config"):
@@ -95,5 +93,5 @@ for file in files:
     os.system('mv ./tmp/'+file+" "+output_path)
 
 # Delete the tmp
-x = input("Delte the tmp ?\n")
+x = input("Delete the tmp ?\n")
 os.system('rm -r ' + tmp_path)
