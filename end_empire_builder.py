@@ -3,7 +3,7 @@ import os
 def log(s):
     print(s)
 
-input_path = "/media/Data/Game_L/PolyMC/instances/TheEndClient/.minecraft"
+input_path = "/media/Data/Game_L/PrismLanucher/instances/TheEndClient/.minecraft"
 output_path = "/home/ender/.local/share/atlauncher/instances/TheEndClient"
 resourcepacks = ["§cTea", "baguette", "Ender's-Tweaks", "Original Green"]
 removed_config = {
